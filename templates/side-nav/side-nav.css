@@ -1,0 +1,38 @@
+.side-nav main .section:not(.side-nav-container, .breadcrumb-container) a {
+  text-decoration: underline;
+  color: var(--black-color);
+  font-weight: bold;
+}
+
+.side-nav main .section:not(.side-nav-container, .breadcrumb-container) a:after {
+  font-family: 'FontAwesome';
+  content: "\f08e";
+  margin-left: 9px;
+  display: inline-block;
+}
+
+.side-nav main section:not(.side-nav-container) a:hover {
+  text-decoration: none;
+}
+
+.side-nav main>.section:first-of-type {
+  margin: auto;
+  padding: 0 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 40px;
+}
+
+.side-nav main>div:not(.breadcrumb-container) {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+  margin-bottom: 40px
+}
+
+@media (width >= 1024px) {
+  .side-nav main>div:not(.breadcrumb-container) {
+    gap: 3rem;
+  }
+}

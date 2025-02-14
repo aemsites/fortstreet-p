@@ -1,0 +1,33 @@
+.aicolumns-su539l-519531635 > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.aicolumns-su539l-519531635 img {
+  width: 100%;
+}
+
+.aicolumns-su539l-519531635 > div > div {
+  order: 1;
+}
+
+.aicolumns-su539l-519531635 > div > .aicolumns-su539l-519531635-img-col {
+  order: 0;
+}
+
+.aicolumns-su539l-519531635 > div > .aicolumns-su539l-519531635-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .aicolumns-su539l-519531635 > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .aicolumns-su539l-519531635 > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

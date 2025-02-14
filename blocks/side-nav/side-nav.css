@@ -1,0 +1,127 @@
+.block.side-nav {
+  display: none;
+  width: 340px;
+}
+
+.block.side-nav a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.block.side-nav .first-level-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.block.side-nav .first-level-li {
+  position: relative;
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--light-grey-color);
+  border-bottom: 1px solid var(--light-grey-color);
+}
+
+.block.side-nav .first-level-li a {
+  padding: 0 40px 0 16px;
+}
+
+.block.side-nav a:hover:not(.expand-collapse) {
+  text-decoration: underline;
+}
+
+
+.block.side-nav .first-level-li a.expand-collapse {
+  padding-right: 0;
+}
+
+.block.side-nav .first-level-li.expanded {
+  padding-bottom: 0;
+}
+
+.block.side-nav .first-level-li.selected {
+  border-left: 6px solid #02084b;
+}
+
+.block.side-nav .first-level-li:first-of-type > a {
+  padding-left: 60px;
+}
+
+.block.side-nav .first-level-li.expanded > a:not(.expand-collapse) {
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+}
+
+.block.side-nav .first-level-li.selected > a:not(.expand-collapse) {
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+}
+
+.block.side-nav .first-level-li:first-of-type {
+  background-color: var(--light-grey-color);
+  position: relative;
+}
+
+.block.side-nav .first-level-li:first-of-type > a::before {
+  content: "⬅";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  margin-left: 16px;
+}
+
+.block.side-nav .second-level-ul {
+  list-style: none;
+  padding-left: 16px;
+  margin: 8px 0 0;
+  transition: max-height 0.3s ease-out;
+  max-height: 1000px;
+  overflow: hidden;
+}
+
+.block.side-nav .second-level-ul.collapsed {
+  max-height: 0;
+  margin: 0;
+}
+
+.block.side-nav .second-level-li {
+  margin: 8px 0;
+  padding: 5px 0 11px 10px;
+  border-bottom: 1px solid var(--light-grey-color);
+}
+
+.block.side-nav .second-level-li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.block.side-nav .expand-collapse {
+  position: absolute;
+  right: 16px;
+  top: 11px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  font-size: 25px;
+  font-weight: var(--font-weight-bold);
+}
+
+.block.side-nav .first-level-li.expanded .expand-collapse {
+  transform: rotate(45deg);
+}
+
+@media (width >= 1024px) {
+  .block.side-nav {
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+.aicards-u4i0gy-box-id-95299458 > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-gap: 24px;
+}
+
+.aicards-u4i0gy-box-id-95299458 > ul > li {
+  border: 1px solid #dadada;
+  background-color: var(--background-color);
+}
+
+.aicards-u4i0gy-box-id-95299458 .aicards-u4i0gy-box-id-95299458-card-body {
+  margin: 16px;
+}
+
+.aicards-u4i0gy-box-id-95299458 .aicards-u4i0gy-box-id-95299458-card-image {
+  line-height: 0;
+}
+
+.aicards-u4i0gy-box-id-95299458 > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}

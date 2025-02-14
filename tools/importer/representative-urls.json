@@ -1,0 +1,20 @@
+{
+  "originUrl": "https://fortstreet-p.schools.nsw.gov.au/",
+  "totalUrls": 1,
+  "urls": [
+    {
+      "url": "https://fortstreet-p.schools.nsw.gov.au/news/2024.html",
+      "source": "NAV"
+    }
+  ],
+  "crawlOptions": {
+    "timeout": 10000,
+    "inclusionPatterns": [],
+    "exclusionPatterns": [],
+    "limit": -1,
+    "sameDomain": true,
+    "keepHash": false,
+    "strategy": "sitemaps",
+    "logger": {}
+  }
+}

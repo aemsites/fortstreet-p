@@ -1,0 +1,33 @@
+.aicolumns-ue65o8-box-id-494745282 > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.aicolumns-ue65o8-box-id-494745282 img {
+  width: 100%;
+}
+
+.aicolumns-ue65o8-box-id-494745282 > div > div {
+  order: 1;
+}
+
+.aicolumns-ue65o8-box-id-494745282 > div > .aicolumns-ue65o8-box-id-494745282-img-col {
+  order: 0;
+}
+
+.aicolumns-ue65o8-box-id-494745282 > div > .aicolumns-ue65o8-box-id-494745282-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .aicolumns-ue65o8-box-id-494745282 > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .aicolumns-ue65o8-box-id-494745282 > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

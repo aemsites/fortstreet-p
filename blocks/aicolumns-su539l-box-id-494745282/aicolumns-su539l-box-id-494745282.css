@@ -1,0 +1,33 @@
+.aicolumns-su539l-box-id-494745282 > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.aicolumns-su539l-box-id-494745282 img {
+  width: 100%;
+}
+
+.aicolumns-su539l-box-id-494745282 > div > div {
+  order: 1;
+}
+
+.aicolumns-su539l-box-id-494745282 > div > .aicolumns-su539l-box-id-494745282-img-col {
+  order: 0;
+}
+
+.aicolumns-su539l-box-id-494745282 > div > .aicolumns-su539l-box-id-494745282-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .aicolumns-su539l-box-id-494745282 > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .aicolumns-su539l-box-id-494745282 > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

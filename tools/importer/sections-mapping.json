@@ -1,0 +1,383 @@
+{
+  "url": "https://fortstreet-p.schools.nsw.gov.au",
+  "sanitizedPath": "/index",
+  "autoDetect": true,
+  "mapping": [
+    {
+      "id": "1",
+      "path": "/nav",
+      "sections": [
+        {
+          "id": "1-1",
+          "blocks": [
+            {
+              "id": "box-id--519531666",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1422,
+              "height": 151,
+              "xpath": "/html[1]/body[1]/header[1]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/header[1]/div[1]/div[1]/a[1]/img[1]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/header[@class=\"local-header uk-hidden-small\"]/div[@class=\"uk-width-xlarge-1-1\"]/div[@class=\"uk-container uk-container-center\"]/a[@class=\"local-header-logo-link local-header-school-logo\"]/img[@class=\"local-header-logo\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/header[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/header[@class=\"local-header uk-hidden-small\"]/div[@class=\"uk-width-xlarge-1-1\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"local-header-name uk-width-8-10\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 2,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 72,
+              "mapping": "header",
+              "customBlockName": "header"
+            }
+          ],
+          "settings": {}
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "path": "/index",
+      "sections": [
+        {
+          "id": "2-1",
+          "blocks": [
+            {
+              "id": "box-id--1102402302",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1422,
+              "height": 37,
+              "xpath": "/html[1]/body[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 0,
+              "mapping": "defaultContent",
+              "customBlockName": "top-ribbon"
+            },
+            {
+              "id": "box-id--1102402116",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1422,
+              "height": 35,
+              "xpath": "/html[1]/body[1]/div[7]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 37,
+              "mapping": "defaultContent",
+              "customBlockName": "payment"
+            },
+            {
+              "id": "box-id--1102402085",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1422,
+              "height": 62,
+              "xpath": "/html[1]/body[1]/div[8]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[1]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/div[@class=\"sws-mega-menu uk-visible-large\"]/div[@class=\"uk-container uk-container-center sws-meganav-container sws-remove-external-link\"]/nav[@class=\"uk-navbar-container\"]/div[@class=\"uk-container\"]/div[@class=\"uk-navbar\"]/ul[@class=\"uk-navbar-nav sws-mega-menu-title-bar\"]/li[@class=\"uk-parent sws-meganav-megalinks__li sws-parent-menu\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[2]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/div[@class=\"sws-mega-menu uk-visible-large\"]/div[@class=\"uk-container uk-container-center sws-meganav-container sws-remove-external-link\"]/nav[@class=\"uk-navbar-container\"]/div[@class=\"uk-container\"]/div[@class=\"uk-navbar\"]/ul[@class=\"uk-navbar-nav sws-mega-menu-title-bar\"]/li[@class=\"uk-parent sws-meganav-megalinks__li sws-parent-menu\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[3]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/div[@class=\"sws-mega-menu uk-visible-large\"]/div[@class=\"uk-container uk-container-center sws-meganav-container sws-remove-external-link\"]/nav[@class=\"uk-navbar-container\"]/div[@class=\"uk-container\"]/div[@class=\"uk-navbar\"]/ul[@class=\"uk-navbar-nav sws-mega-menu-title-bar\"]/li[@class=\"uk-parent sws-meganav-megalinks__li sws-parent-menu\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[4]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/div[@class=\"sws-mega-menu uk-visible-large\"]/div[@class=\"uk-container uk-container-center sws-meganav-container sws-remove-external-link\"]/nav[@class=\"uk-navbar-container\"]/div[@class=\"uk-container\"]/div[@class=\"uk-navbar\"]/ul[@class=\"uk-navbar-nav sws-mega-menu-title-bar\"]/li[@class=\"uk-parent sws-meganav-megalinks__li sws-parent-menu\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[5]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/div[@class=\"sws-mega-menu uk-visible-large\"]/div[@class=\"uk-container uk-container-center sws-meganav-container sws-remove-external-link\"]/nav[@class=\"uk-navbar-container\"]/div[@class=\"uk-container\"]/div[@class=\"uk-navbar\"]/ul[@class=\"uk-navbar-nav sws-mega-menu-title-bar\"]/li[@class=\"uk-parent sws-meganav-megalinks__li sws-parent-menu\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 5,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 254,
+              "mapping": "defaultContent",
+              "customBlockName": "ai-cols"
+            },
+            {
+              "id": "box-id-241692432",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1422,
+              "height": 808,
+              "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/img[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 319,
+              "mapping": "hero",
+              "customBlockName": "ai-hero"
+            },
+            {
+              "id": "box-id-95299458",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1422,
+              "height": 248,
+              "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"heroBanner\"]/div[@class=\"hero-banner uk-grid uk-grid-collapse uk-width-1-1 sws-remove-external-link\"]/div[@class=\"sws-banner-wrapper uk-margin-bottom sws-banner-wrapper-tiles\"]/div[@class=\"uk-height-small uk-position-relative\"]/div[@class=\"uk-container\"]/ul[@class=\"uk-grid-medium uk-grid\"]/li[@class=\"banner-cards\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"heroBanner\"]/div[@class=\"hero-banner uk-grid uk-grid-collapse uk-width-1-1 sws-remove-external-link\"]/div[@class=\"sws-banner-wrapper uk-margin-bottom sws-banner-wrapper-tiles\"]/div[@class=\"uk-height-small uk-position-relative\"]/div[@class=\"uk-container\"]/ul[@class=\"uk-grid-medium uk-grid\"]/li[@class=\"banner-cards\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"heroBanner\"]/div[@class=\"hero-banner uk-grid uk-grid-collapse uk-width-1-1 sws-remove-external-link\"]/div[@class=\"sws-banner-wrapper uk-margin-bottom sws-banner-wrapper-tiles\"]/div[@class=\"uk-height-small uk-position-relative\"]/div[@class=\"uk-container\"]/ul[@class=\"uk-grid-medium uk-grid\"]/li[@class=\"banner-cards\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"heroBanner\"]/div[@class=\"hero-banner uk-grid uk-grid-collapse uk-width-1-1 sws-remove-external-link\"]/div[@class=\"sws-banner-wrapper uk-margin-bottom sws-banner-wrapper-tiles\"]/div[@class=\"uk-height-small uk-position-relative\"]/div[@class=\"uk-container\"]/ul[@class=\"uk-grid-medium uk-grid\"]/li[@class=\"banner-cards\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 4,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 1062,
+              "mapping": "cards",
+              "customBlockName": "ai-cards"
+            },
+            {
+              "id": "box-id-494745282",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1422,
+              "height": 463,
+              "xpath": "/html[1]/body[1]/main[1]/div[2]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"heroBanner\"]/div[@class=\"hero-banner uk-grid uk-grid-collapse uk-width-1-1 sws-remove-external-link\"]/div[@class=\"sws-banner-wrapper uk-margin-bottom sws-banner-video-overlay sws-content-video-overlay\"]/div[@class=\"sws-static-banner-component sws-static-banner__video\"]/div[@class=\"sws-static-banner-component__text\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[2]/div[1]/div[1]/div[1]/div[2]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"heroBanner\"]/div[@class=\"hero-banner uk-grid uk-grid-collapse uk-width-1-1 sws-remove-external-link\"]/div[@class=\"sws-banner-wrapper uk-margin-bottom sws-banner-video-overlay sws-content-video-overlay\"]/div[@class=\"sws-static-banner-component sws-static-banner__video\"]/div[@class=\"sws-static-banner-component__video\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 2,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 1325,
+              "mapping": "cards",
+              "customBlockName": "ai-cards-2"
+            },
+            {
+              "id": "box-id-1596628132",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1200,
+              "height": 260,
+              "xpath": "/html[1]/body[1]/main[1]/div[3]/div[1]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[3]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"card\"]/div[@class=\"sws-card sws-card-horizontal\"]/div[@class=\"sws-card-img-wrapper\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[3]/div[1]/div[1]/div[2]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"card\"]/div[@class=\"sws-card sws-card-horizontal\"]/div[@class=\"sws-card-content-wrapper\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 2,
+                "numRows": 1
+              },
+              "x": 111,
+              "y": 1788,
+              "mapping": "columns",
+              "customBlockName": "ai-cols-2"
+            },
+            {
+              "id": "box-id-2074294243",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1180,
+              "height": 58,
+              "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 121,
+              "y": 2071,
+              "mapping": "defaultContent",
+              "customBlockName": "news"
+            },
+            {
+              "id": "box-id-2074294274",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1200,
+              "height": 498,
+              "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[2]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[2]/div[1]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"latestnews\"]/div[@class=\"latest-news\"]/div[@class=\"sws-container-inner sws-latest-news-desktop-container\"]/div[@class=\"sws-latest-news-wrapper sws-news-component-first\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[2]/div[2]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"latestnews\"]/div[@class=\"latest-news\"]/div[@class=\"sws-container-inner sws-latest-news-desktop-container\"]/div[@class=\"sws-latest-news-wrapper sws-news-component-first\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[2]/div[3]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/main[@class=\"gef-main sws-homepage-main\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"latestnews\"]/div[@class=\"latest-news\"]/div[@class=\"sws-container-inner sws-latest-news-desktop-container\"]/div[@class=\"sws-latest-news-wrapper sws-news-component-first\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 3,
+                "numRows": 1
+              },
+              "x": 111,
+              "y": 2140,
+              "mapping": "cards",
+              "customBlockName": "ai-cards-3"
+            },
+            {
+              "id": "box-id-1596628194",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1200,
+              "height": 218,
+              "xpath": "/html[1]/body[1]/main[1]/div[3]/div[3]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 111,
+              "y": 2638,
+              "mapping": "defaultContent",
+              "customBlockName": "ai-content"
+            },
+            {
+              "id": "box-id-1493013305",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1200,
+              "height": 29,
+              "xpath": "/html[1]/body[1]/div[9]/div[1]/h2[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 111,
+              "y": 2968,
+              "mapping": "defaultContent",
+              "customBlockName": "ai-content-2"
+            },
+            {
+              "id": "box-id--1024107302",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1200,
+              "height": 243,
+              "xpath": "/html[1]/body[1]/div[9]/div[1]/div[1]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/div[9]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/div[@class=\"local-footer\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"uk-grid uk-grid-collapse\"]/div[@class=\"uk-width-3-10 local-footer-main-content\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[9]/div[1]/div[1]/div[2]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/div[@class=\"local-footer\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"uk-grid uk-grid-collapse\"]/div[@class=\"uk-width-4-10 local-footer-social-media\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[9]/div[1]/div[1]/div[3]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/div[@class=\"local-footer\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"uk-grid uk-grid-collapse\"]/div[@class=\"uk-width-4-10 local-footer-logo uk-hidden-small\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 3,
+                "numRows": 1
+              },
+              "x": 111,
+              "y": 2997,
+              "mapping": "columns",
+              "customBlockName": "ai-cols-3"
+            },
+            {
+              "id": "box-id-185265704",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1422,
+              "height": 61,
+              "xpath": "/html[1]/body[1]/div[10]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 3265,
+              "mapping": "defaultContent",
+              "customBlockName": "ai-content-3"
+            }
+          ],
+          "settings": {}
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "path": "/footer",
+      "sections": [
+        {
+          "id": "3-1",
+          "blocks": [
+            {
+              "id": "box-id-437629947",
+              "x": 0,
+              "y": 3326,
+              "width": 1422,
+              "height": 164,
+              "xpath": "/html[1]/body[1]/aside[1]",
+              "layout": {
+                "numCols": 2,
+                "numRows": 1
+              },
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/aside[1]/div[1]/div[1]/div[2]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/aside[@class=\"gef-global-footer uk-width-1-1\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"gef-global-footer__inner uk-grid\"]/div[@class=\"gef-global-footer__inner__logo uk-width-medium-4-10 uk-width-large-3-10\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/aside[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "/body[@class=\"theme1\"]/aside[@class=\"gef-global-footer uk-width-1-1\"]/div[@class=\"uk-container uk-container-center\"]/div[@class=\"gef-global-footer__inner uk-grid\"]/div[@class=\"gef-global-footer__inner__wrapper uk-width-medium-6-10 uk-width-large-7-10\"]"
+                }
+              ],
+              "color": "rgb(0, 0, 255)",
+              "mapping": "columns",
+              "customBlockName": "last"
+            }
+          ],
+          "settings": {}
+        }
+      ]
+    }
+  ]
+}
