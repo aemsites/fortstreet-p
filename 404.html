@@ -11,20 +11,6 @@
   <meta property="og:title" content="Page not found">
   <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
   <script type="module">
-    window.addEventListener('load', () => {
-      if (document.referrer) {
-        const { origin, pathname } = new URL(document.referrer);
-        if (origin === window.location.origin) {
-          const backBtn = document.createElement('a');
-          backBtn.classList.add('button', 'error-button-back');
-          backBtn.href = pathname;
-          backBtn.textContent = 'Go back';
-          backBtn.title = 'Go back';
-          const btnContainer = document.querySelector('.button-container');
-          btnContainer.append(backBtn);
-        }
-      }
-    });
   </script>
   <script type="module">
     import { sampleRUM } from '/scripts/aem.js';
@@ -33,9 +19,9 @@
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
     main.error {
-      min-height: calc(100vh - var(--nav-height));
+      /* min-height: calc(100vh - var(--nav-height));
       display: flex;
-      align-items: center;
+      align-items: center; */
     }
 
     main.error .error-number {
@@ -45,6 +31,25 @@
     main.error .error-number text {
       font-family: monospace;
     }
+
+    main .error-container {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    main .error-container a {
+      color: var(--black-color);
+      font-weight: var(--font-weight-bold);
+      text-decoration: underline;
+    }
+
+    @media (width >= 1024px) {
+      main .error-container {
+        flex-direction: row;
+        gap: 24px;
+      }
+    }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
 </head>
@@ -52,14 +57,17 @@
 <body>
   <header></header>
   <main class="error">
-    <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
-      <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Go home</a>
-      </p>
+    <div>
+      <div class="error-container">
+        <div>
+          <img src="content/404.png" alt="404 image">
+        </div>
+        <div>
+          <p>Sorry, we can’t find this page. It may have moved in our recent efforts to improve the website.</p>
+          <p>Try searching for the information you’re looking for. You can also try browsing from the homepage.</p>
+          <p>For help, <a href="/contact-us">contact us</a>.</p>
+        </div>
+      </div>
     </div>
   </main>
   <footer></footer>

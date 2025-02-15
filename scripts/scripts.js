@@ -110,7 +110,7 @@ function buildBreadcrumb(main) {
     && main.parentElement) {
     main.prepend(div(buildBlock('breadcrumb', { elems: [] })));
     const breadcrumb = main.querySelector('div');
-    const breadcrumbTitle = getMetadata('breadcrumb-title');
+    const breadcrumbTitle = getMetadata('breadcrumb-title') || getMetadata('title') || 'Page not found';
     breadcrumb.classList.add('grey-background');
     const fromTheDepartment = getMetadata('from-the-department');
     if (fromTheDepartment) {
