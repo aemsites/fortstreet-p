@@ -58,6 +58,8 @@ function setMetadata(meta, document, url) {
       || pathname.startsWith('/learning-at-our-school')
       || pathname.startsWith('/for-parents')) {
       meta.template = 'side-nav';
+    } else if (pathname.startsWith('/contact-us')) {
+      meta.template = 'contact-us';
     }
   }
 

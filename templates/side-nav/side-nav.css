@@ -4,8 +4,8 @@
   font-weight: bold;
 }
 
-.side-nav main .section:not(.side-nav-container, .breadcrumb-container) a:after {
-  font-family: 'FontAwesome';
+.side-nav main .section:not(.side-nav-container, .breadcrumb-container) a::after {
+  font-family: FontAwesome, sans-serif;
   content: "\f08e";
   margin-left: 9px;
   display: inline-block;

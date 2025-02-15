@@ -35,23 +35,23 @@
   padding: 0;
 }
 
+.news-article .block.text a {
+  color: var(--white-color);
+  text-decoration: underline;
+  content: "";
+}
+
 .news-article main .section:not(.breadcrumb-container):first-of-type a {
   text-decoration: underline;
   color: var(--black-color);
   font-weight: bold;
 }
 
-.news-article main .section:not(.breadcrumb-container):first-of-type a:after {
-  font-family: 'FontAwesome';
+.news-article main .section:not(.breadcrumb-container):first-of-type a::after {
+  font-family: FontAwesome, sans-serif;
   content: "\f08e";
   margin-left: 9px;
   display: inline-block;
-}
-
-.news-article .block.text a {
-  color: var(--white-color);
-  text-decoration: underline;
-  content: "";
 }
 
 .news-article .publication-date {
