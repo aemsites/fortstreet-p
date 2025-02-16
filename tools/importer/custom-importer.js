@@ -136,6 +136,16 @@ const addCaption = (main) => {
   }
 };
 
+const h4toH3 = (main) => {
+  const h4s = main.querySelectorAll('h4');
+  if (h4s?.length) {
+    h4s.forEach((h4) => {
+      const h3 = document.createElement('h3');
+      h3.textContent = h4.textContent;
+      h4.replaceWith(h3);
+    });
+  }
+};
 const addLeadParagraph = (main) => {
   const leadParagraph = main.querySelector('.sws-lead-paragraph');
   if (leadParagraph) {
@@ -197,6 +207,7 @@ export default {
 
     addCaption(main);
     addLeadParagraph(main);
+    h4toH3(main);
     addCarouselItems(main);
     addVideo(main);
     WebImporter.rules.transformBackgroundImages(main, document);

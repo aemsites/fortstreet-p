@@ -32,5 +32,9 @@ export default function decorate(block) {
     block.appendChild(breadcrumb);
   }
 
+  outDiv.querySelectorAll('a').forEach((anchor) => {
+    anchor.classList.remove('button');
+  });
+
   block.appendChild(outDiv);
 }
