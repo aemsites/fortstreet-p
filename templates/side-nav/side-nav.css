@@ -23,6 +23,10 @@
   margin-bottom: 40px;
 }
 
+.side-nav main ul, ol {
+  padding-left: 16px;
+}
+
 .side-nav main>div:not(.breadcrumb-container) {
   display: flex;
   max-width: 1200px;
