@@ -106,6 +106,22 @@ const addVideo = (main) => {
   }
 };
 
+const addCaption = (main) => {
+  const captions = main.querySelectorAll('figcaption');
+  if (captions?.length) {
+    captions.forEach((caption) => {
+      const span = caption.querySelector('span');
+      if (span?.classList.contains('show-on-sr')) {
+        span.remove();
+      }
+      const italicText = document.createElement('em');
+      italicText.textContent = caption.textContent.trim();
+
+      caption.replaceWith(italicText);
+    });
+  }
+};
+
 export default {
   /**
      * Apply DOM operations to the provided document and return
@@ -155,6 +171,7 @@ export default {
     const mdb = WebImporter.Blocks.getMetadataBlock(document, meta);
     main.append(mdb);
 
+    addCaption(main);
     addCarouselItems(main);
     addVideo(main);
     WebImporter.rules.transformBackgroundImages(main, document);
