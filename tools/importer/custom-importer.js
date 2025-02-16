@@ -105,6 +105,19 @@ const addVideo = (main) => {
       }
     });
   }
+
+  const embeds = main.querySelectorAll('embed');
+  if (embeds?.length) {
+    embeds.forEach((embed) => {
+      const { src } = embed;
+      const cells = [['Video']];
+      if (src?.includes('youtube') || src?.includes('youtu.be')) {
+        cells.push([src]);
+        const table = WebImporter.DOMUtils.createTable(cells, document);
+        embed.replaceWith(table);
+      }
+    });
+  }
 };
 
 const addCaption = (main) => {
