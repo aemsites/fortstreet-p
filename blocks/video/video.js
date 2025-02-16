@@ -46,10 +46,21 @@ function embedVimeo(url, autoplay, background) {
   }
   const temp = document.createElement('div');
   temp.innerHTML = `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
-      <iframe src="https://player.vimeo.com/video/${video}${suffix}" 
+      <iframe src="https://player.vimeo.com/video/${video}${suffix}"
+      style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;"
+      frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+      title="Content from Vimeo" loading="lazy"></iframe>
+    </div>`;
+  return temp.children.item(0);
+}
+
+function embedBrightCove(url) {
+  const temp = document.createElement('div');
+  temp.innerHTML = `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+      <iframe src=${url}
       style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" 
       frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen  
-      title="Content from Vimeo" loading="lazy"></iframe>
+      title="Content from BrightCove" loading="lazy"></iframe>
     </div>`;
   return temp.children.item(0);
 }
@@ -84,6 +95,7 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
 
   const isYoutube = link.includes('youtube') || link.includes('youtu.be');
   const isVimeo = link.includes('vimeo');
+  const isBrightCove = link.includes('brightcove') || link.includes('bcove');
 
   if (isYoutube) {
     const embedWrapper = embedYoutube(url, autoplay, background);
@@ -93,6 +105,12 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
     });
   } else if (isVimeo) {
     const embedWrapper = embedVimeo(url, autoplay, background);
+    block.append(embedWrapper);
+    embedWrapper.querySelector('iframe').addEventListener('load', () => {
+      block.dataset.embedLoaded = true;
+    });
+  } else if (isBrightCove) {
+    const embedWrapper = embedBrightCove(url, autoplay, background);
     block.append(embedWrapper);
     embedWrapper.querySelector('iframe').addEventListener('load', () => {
       block.dataset.embedLoaded = true;
