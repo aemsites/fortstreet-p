@@ -146,6 +146,7 @@ const h4toH3 = (main) => {
     });
   }
 };
+
 const addLeadParagraph = (main) => {
   const leadParagraph = main.querySelector('.sws-lead-paragraph');
   if (leadParagraph) {
@@ -154,6 +155,32 @@ const addLeadParagraph = (main) => {
     const table = WebImporter.DOMUtils.createTable(cells, document);
     leadParagraph.replaceWith(table);
   }
+};
+
+export const fixPdfLinks = (main, results) => {
+  if (!main) {
+    return;
+  }
+
+  main.querySelectorAll('a').forEach((a) => {
+    const href = a.getAttribute('href');
+
+    if (href?.startsWith('/')) {
+      const extension = href.split('.').pop().toLowerCase();
+
+      if (extension === 'pdf') {
+        const newPath = href.toLowerCase().replace(/_/g, '-').replace('/content/dam', '/assets/pdfs');
+        a.href = newPath;
+        results.push({
+          path: newPath,
+          from: href,
+          report: {
+            original: href,
+          },
+        });
+      }
+    }
+  });
 };
 
 export default {
@@ -166,7 +193,7 @@ export default {
      * @param {object} params Object containing some parameters given by the import process.
      * @returns {HTMLElement} The root element to be transformed
      */
-  transformDOM: ({
+  transform: ({
     // eslint-disable-next-line no-unused-vars
     document, url, html, params,
   }) => {
@@ -199,6 +226,7 @@ export default {
       '#backtotop',
     ]);
 
+    const results = [];
     const meta = WebImporter.Blocks.getMetadata(document);
     setMetadata(meta, document, url);
 
@@ -210,36 +238,28 @@ export default {
     h4toH3(main);
     addCarouselItems(main);
     addVideo(main);
+    fixPdfLinks(main, results);
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
     WebImporter.rules.convertIcons(main, document);
 
-    return main;
-  },
-
-  /**
-     * Return a path that describes the document being transformed (file name, nesting...).
-     * The path is then used to create the corresponding Word document.
-     * @param {HTMLDocument} document The document
-     * @param {string} url The url of the page imported
-     * @param {string} html The raw html (the document is cleaned up during preprocessing)
-     * @param {object} params Object containing some parameters given by the import process.
-     * @return {string} The path
-     */
-  generateDocumentPath: ({
-    // eslint-disable-next-line no-unused-vars
-    document, url, html, params,
-  }) => {
     let p = new URL(url).pathname;
     if (p.endsWith('/')) {
       p = `${p}index`;
     }
 
-    return decodeURIComponent(p)
+    const newPagePath = decodeURIComponent(p)
       .toLowerCase()
       .replace(/\.html$/, '')
       .replace(/[^a-z0-9/]/gm, '-')
       .replace(/-+/g, '-')
       .replace(/(^-|-$)/g, '');
+
+    results.push({
+      element: main,
+      path: newPagePath,
+    });
+
+    return results;
   },
 };

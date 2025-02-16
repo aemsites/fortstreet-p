@@ -15,7 +15,7 @@ const markerOnClick = (infoWindow, location, map, marker) => {
       // add dynamice class to the info window
       `<div class='info-window visible'>
         <div>
-          <img class='info-window-logo' src='/content/fspslogo.png'>
+          <img class='info-window-logo' src='/assets/images/fspslogo.png'>
         </div>
         <div>
           <strong>${location.name}</strong><br>

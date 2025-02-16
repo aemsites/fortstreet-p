@@ -71,7 +71,7 @@
   margin-top: 0;
 }
 
-.news-article main .section:not(.breadcrumb-container):first-of-type a:has(img):after {
+.news-article main .section:not(.breadcrumb-container):first-of-type a:has(img)::after {
   content: none;
 }
 

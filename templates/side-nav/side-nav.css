@@ -35,6 +35,10 @@
   text-decoration: none;
 }
 
+.side-nav main .section:not(.side-nav-container, .breadcrumb-container) a:has(img)::after {
+  content: none;
+}
+
 .side-nav main>div:not(.breadcrumb-container) {
   display: flex;
   max-width: 1200px;
