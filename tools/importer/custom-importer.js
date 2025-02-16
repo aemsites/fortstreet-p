@@ -98,7 +98,8 @@ const addVideo = (main) => {
       const cells = [['Video']];
       const iframeSrc = video?.querySelector('iframe')?.src;
       if (iframeSrc) {
-        cells.push([iframeSrc]);
+        const cleanUrl = iframeSrc.replace(/\\/g, '');
+        cells.push([cleanUrl]);
         const table = WebImporter.DOMUtils.createTable(cells, document);
         video.replaceWith(table);
       }
