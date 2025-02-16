@@ -136,6 +136,16 @@ const addCaption = (main) => {
   }
 };
 
+const addLeadParagraph = (main) => {
+  const leadParagraph = main.querySelector('.sws-lead-paragraph');
+  if (leadParagraph) {
+    const cells = [['Text (Big)']];
+    cells.push([leadParagraph.textContent]);
+    const table = WebImporter.DOMUtils.createTable(cells, document);
+    leadParagraph.replaceWith(table);
+  }
+};
+
 export default {
   /**
      * Apply DOM operations to the provided document and return
@@ -186,6 +196,7 @@ export default {
     main.append(mdb);
 
     addCaption(main);
+    addLeadParagraph(main);
     addCarouselItems(main);
     addVideo(main);
     WebImporter.rules.transformBackgroundImages(main, document);

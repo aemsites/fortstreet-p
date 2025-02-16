@@ -27,6 +27,14 @@
   padding-left: 16px;
 }
 
+.side-nav main .section.side-nav-container a:hover {
+  font-weight: var(--font-weight-bold);
+}
+
+.side-nav main .section:not(.side-nav-container) a:hover {
+  text-decoration: none;
+}
+
 .side-nav main>div:not(.breadcrumb-container) {
   display: flex;
   max-width: 1200px;
