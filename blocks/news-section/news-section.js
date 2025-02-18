@@ -2,7 +2,7 @@ import { buildBlock, loadBlock, createOptimizedPicture, getFormattedDate , decor
 
 // Constants
 const ITEMS_PER_PAGE = 6;
-const DEFAULT_IMAGE = "/for-parents/media_14d486ea46814365c71f7d6d83b417e682cf318f9.jpeg";
+const DEFAULT_IMAGE = "/news/2021/12/media_16a0d87cb049109d66f17dff074755a0f74c5be5b.jpeg";
 const DESCRIPTION_MAX_LENGTH = 138;
 
 /**
@@ -88,8 +88,9 @@ async function fetchNewsItems(filterValue = 'all') {
   try {
     const response = await fetch('/query-index.json');
     const { data } = await response.json();
+    const newsItems = data.filter(item => item.path.startsWith('/news'));
 
-    return filterNewsItems(data, filterValue);
+    return filterNewsItems(newsItems, filterValue);
   } catch (error) {
     console.error('Error fetching news items:', error);
     return [];
@@ -223,8 +224,8 @@ function buildData(items) {
 
         return {
           path: item.path || '#',
-         // image: item.image === '0' ? DEFAULT_IMAGE : item.image,
-         image: DEFAULT_IMAGE ,
+          //TODO: Change this
+         image: item.image === '0' || item.image.startsWith('/default-meta-image.png') ? DEFAULT_IMAGE : item.image,
           title: item.title || '',
           breadcrumbTitle: item['breadcrumb-title'] || '',
           date: pubDate,
@@ -360,6 +361,7 @@ export default async function decorate(block) {
     contentSection.className = 'news-cards';
 
     const newsContentContainer = document.createElement('div');
+    // TODO: Change this
     newsContentContainer.className = 'news-cards';
 
     // Initialize state
