@@ -50,6 +50,18 @@ function updateURL(filterValue) {
   }
 }
 
+function getTrimmedTitle(title) {
+  if (!title) return "";
+  
+  // Remove " - Fort Street Public School" suffix if present
+  const suffix = " - Fort Street Public School";
+  if (title.endsWith(suffix)) {
+    title = title.slice(0, -suffix.length);
+  }
+  
+  return title;
+}
+
 function getTrimmedDescription(description) {
   if (description && description.length > DESCRIPTION_MAX_LENGTH) {
     return description.substring(0, DESCRIPTION_MAX_LENGTH - 3) + '...';
@@ -226,7 +238,7 @@ function buildData(items) {
           path: item.path || '#',
           //TODO: Change this
          image: item.image === '0' || item.image.startsWith('/default-meta-image.png') ? DEFAULT_IMAGE : item.image,
-          title: item.title || '',
+          title: getTrimmedTitle(item.title || ''),
           breadcrumbTitle: item['breadcrumb-title'] || '',
           date: pubDate,
           description: getTrimmedDescription(item.description || ''),
