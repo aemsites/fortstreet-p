@@ -16,7 +16,7 @@ export default function decorate(block) {
       <a href="${item.path}" class="news-card">
         <img class="news-card-image" src="${item.image}" alt="${item.title}"/>
         <div class="news-card-content">
-          <div class="news-card-category">/News category</div>
+          <div class="news-card-category">${item.category}</div>
           <h3 class="news-card-title">${item.title}</h3>
           <div class="news-card-date">${item.date}</div>
           <div class="news-card-description">${item.description}</div>

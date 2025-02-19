@@ -10,7 +10,9 @@ const DESCRIPTION_MAX_LENGTH = 138;
  */
 function getFilterFromURL() {
   const url = new URL(window.location.href);
+  const path = url.pathname.replace(/\.html$/, '');
 
+  // First check for filter parameter (months selection)
   const filterParam = url.searchParams.get('filterParam');
   if (filterParam) {
     const filterMap = {
@@ -22,9 +24,13 @@ function getFilterFromURL() {
     return filterMap[decodeURIComponent(filterParam)] || 'all';
   }
 
-  const pathMatch = url.pathname.match(/\/news\/(\d{4})\.html$/);
-  if (pathMatch) return pathMatch[1];
+  // Then check for year in the path
+  const yearMatch = path.match(/\/news\/(\d{4})$/);
+  if (yearMatch) {
+    return yearMatch[1];
+  }
 
+  // Default to 'all' if neither is present
   return 'all';
 }
 
@@ -36,11 +42,13 @@ function updateURL(filterValue) {
   const filterTextMap = {
     '7days': 'the past 7 days',
     '30days': 'the past 30 days',
-    '90days': 'the past 90 days',
-    'all': 'all time'
+    '90days': 'the past 90 days'
   };
 
-  if (Object.keys(filterTextMap).includes(filterValue)) {
+  if (filterValue === 'all') {
+    const newUrl = `${baseUrl}.html`;
+    window.history.pushState({ path: newUrl }, '', newUrl);
+  } else if (Object.keys(filterTextMap).includes(filterValue)) {
     const filterText = filterTextMap[filterValue];
     const newUrl = `${baseUrl}.html?filterParam=${encodeURIComponent(filterText)}`;
     window.history.pushState({ path: newUrl }, '', newUrl);
@@ -88,8 +96,14 @@ function filterNewsItems(items, filterValue) {
     }
     case 'all':
       return items;
-    default:
-      return items.filter(item => item.path.includes(`/news/${filterValue}`));
+    default: {
+      // Remove .html when comparing paths
+      const yearPath = `/news/${filterValue}`.replace(/\.html$/, '');
+      return items.filter(item => {
+        const itemPath = item.path.replace(/\.html$/, '');
+        return itemPath.includes(yearPath);
+      });
+    }
   }
 }
 
@@ -100,7 +114,16 @@ async function fetchNewsItems(filterValue = 'all') {
   try {
     const response = await fetch('/query-index.json');
     const { data } = await response.json();
-    const newsItems = data.filter(item => item.path.startsWith('/news'));
+    
+    // Get the current URI path from the block and remove .html
+    const currentPath = window.location.pathname.replace(/\.html$/, '');
+    
+    // Filter for news articles only
+    const newsItems = data.filter(item => {
+      const itemPath = item.path.replace(/\.html$/, '');
+      return itemPath.startsWith(currentPath) && 
+             item.template === 'news-article';
+    });
 
     return filterNewsItems(newsItems, filterValue);
   } catch (error) {
@@ -216,33 +239,23 @@ function buildData(items) {
   return [[
     {
       elems: [`<div><div>${JSON.stringify(items.map(item => {
-        // Format the date if lastModified exists
-        const date = item.lastModified 
-          ? new Date(parseInt(item.lastModified) * 1000).toLocaleDateString('en-US', {
-              day: 'numeric',
-              month: 'short',
-              year: 'numeric'
-            })
-          : '';
-
-        // Format the publication date if it exists
+        // Use publication-date for the date
         const pubDate = item['publication-date'] && item['publication-date'] !== '0'
           ? new Date(parseInt(item['publication-date']) * 1000).toLocaleDateString('en-US', {
               day: 'numeric',
               month: 'short',
               year: 'numeric'
             })
-          : date; // fallback to lastModified date
+          : '';
 
         return {
           path: item.path || '#',
-          //TODO: Change this
-         image: item.image === '0' || item.image.startsWith('/default-meta-image.png') ? DEFAULT_IMAGE : item.image,
-          title: getTrimmedTitle(item.title || ''),
+          image: item.image === '0' || item.image.startsWith('/default-meta-image.png') ? DEFAULT_IMAGE : item.image,
+          title: getTrimmedTitle(item['breadcrumb-title'] || ''), // Use breadcrumb-title
           breadcrumbTitle: item['breadcrumb-title'] || '',
           date: pubDate,
           description: getTrimmedDescription(item.description || ''),
-          category: item.template || 'News category',
+          category: '/News',
           fromDepartment: item['from-the-department'] !== '0',
           robots: item.robots !== '0'
         };
@@ -366,6 +379,17 @@ function formatDate(date) {
   });
 }
 
+/**
+ * Updates the filter dropdown selection
+ * @param {string} filterValue - Value to select
+ */
+function updateFilterSelection(filterValue) {
+  const select = document.getElementById('filterOption');
+  if (select) {
+    select.value = filterValue;
+  }
+}
+
 export default async function decorate(block) {
   try {
     // Create filter and content sections
@@ -432,9 +456,10 @@ export default async function decorate(block) {
      */
     const handleFilterChange = async (filterValue) => {
       currentPage = 1;
-      currentFilter = filterValue; // Update current filter
+      currentFilter = filterValue;
       loadingIndicator.style.display = 'block';
       updateURL(filterValue);
+      updateFilterSelection(filterValue);
       allItems = await fetchNewsItems(filterValue);
       showItems(currentPage);
     };
