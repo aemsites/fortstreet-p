@@ -1,2 +1,5 @@
 mountpoints:
-  /: https://adobe.sharepoint.com/sites/HelixProjects/Shared%20Documents/sites/fortstreet-p
+  /:
+    url: "https://author-p141721-e1521873.adobeaemcloud.com/bin/franklin.delivery/varunstech/aem-eds/main"
+    type: "markup"
+    suffix: ".html"
